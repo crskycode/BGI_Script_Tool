@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGI_Script_Tool", "BGI_Script_Tool.csproj", "{56EA4A3F-9378-419B-A853-63D273E6E38F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56EA4A3F-9378-419B-A853-63D273E6E38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56EA4A3F-9378-419B-A853-63D273E6E38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56EA4A3F-9378-419B-A853-63D273E6E38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56EA4A3F-9378-419B-A853-63D273E6E38F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {549124F7-C95A-48F9-AF22-C44927F041E3}
+	EndGlobalSection
+EndGlobal
