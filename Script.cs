@@ -157,10 +157,14 @@ namespace BGI_Script_Tool
                     {
                         if (item.Item2.Length <= 0 || item.Item2[0] <= 0x80)
                             continue;
+                        if (item.Item2 == "指定されたラベルは見つかりませんでした。")
+                            continue;
                     }
 
-                    writer.WriteLine($"◇{item.Item1:X8}◇{item.Item2}");
-                    writer.WriteLine($"◆{item.Item1:X8}◆{item.Item2}");
+                    string str = EscapeString(item.Item2);
+
+                    writer.WriteLine($"◇{item.Item1:X8}◇{str}");
+                    writer.WriteLine($"◆{item.Item1:X8}◆{str}");
                     writer.WriteLine(string.Empty);
                 }
 
@@ -209,7 +213,7 @@ namespace BGI_Script_Tool
                 // in code section
                 int offset = int.Parse(m.Groups[1].Value, NumberStyles.HexNumber);
                 // translated string
-                var @string = m.Groups[2].Value;
+                var @string = UnescapeString(m.Groups[2].Value);
 
                 // Check offset valid
                 if (!strings.ContainsKey(offset))
@@ -263,6 +267,24 @@ namespace BGI_Script_Tool
         {
             if (_version == null)
                 throw new Exception("The script has not been loaded yet.");
+        }
+
+        static string EscapeString(string input)
+        {
+            input = input.Replace("\r", "\\r");
+            input = input.Replace("\n", "\\n");
+            input = input.Replace("\t", "\\t");
+
+            return input;
+        }
+
+        static string UnescapeString(string input)
+        {
+            input = input.Replace("\\r", "\r");
+            input = input.Replace("\\n", "\n");
+            input = input.Replace("\\t", "\t");
+
+            return input;
         }
     }
 
