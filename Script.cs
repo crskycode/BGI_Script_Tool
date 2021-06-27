@@ -153,9 +153,12 @@ namespace BGI_Script_Tool
             {
                 foreach (var item in strings)
                 {
+                    if (item.Item2.Length == 0)
+                        continue;
+
                     if (!exportAll)
                     {
-                        if (item.Item2.Length <= 0 || item.Item2[0] <= 0x80)
+                        if (item.Item2[0] <= 0x80 && item.Item2[0] != '\r' && item.Item2[0] != '\n' && item.Item2[0] != '\t')
                             continue;
                         if (item.Item2 == "指定されたラベルは見つかりませんでした。")
                             continue;
